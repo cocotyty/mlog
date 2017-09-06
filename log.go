@@ -20,7 +20,6 @@ const (
 )
 
 func init() {
-	flag.Parse()
 	switch *levelFlag {
 	case "info":
 		DefaultLevel = InfoLevel
@@ -59,7 +58,6 @@ func Info(arg ...interface{}) {
 	infoLogger.Println(arg...)
 }
 
-
 var warnLogger = log.New(os.Stderr, "[warn]", log.Lshortfile|log.LstdFlags)
 
 func Warn(arg ...interface{}) {
@@ -68,7 +66,6 @@ func Warn(arg ...interface{}) {
 	}
 	warnLogger.Println(arg...)
 }
-
 
 var errorLogger = log.New(os.Stderr, "[error]", log.Lshortfile|log.LstdFlags)
 
@@ -80,4 +77,3 @@ func Error(arg ...interface{}) {
 }
 
 //#code
-
