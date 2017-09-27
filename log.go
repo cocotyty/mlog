@@ -39,7 +39,7 @@ func init() {
 var debugLogger = log.New(os.Stderr, "[debug]", log.Lshortfile|log.LstdFlags)
 
 func Debug(arg ...interface{}) {
-	if DefaultLevel < DebugLevel {
+	if DefaultLevel > DebugLevel {
 		return
 	}
 	debugLogger.Println(arg...)
@@ -52,7 +52,7 @@ func Debug(arg ...interface{}) {
 var infoLogger = log.New(os.Stderr, "[info]", log.Lshortfile|log.LstdFlags)
 
 func Info(arg ...interface{}) {
-	if DefaultLevel < InfoLevel {
+	if DefaultLevel > InfoLevel {
 		return
 	}
 	infoLogger.Println(arg...)
@@ -61,7 +61,7 @@ func Info(arg ...interface{}) {
 var warnLogger = log.New(os.Stderr, "[warn]", log.Lshortfile|log.LstdFlags)
 
 func Warn(arg ...interface{}) {
-	if DefaultLevel < WarnLevel {
+	if DefaultLevel > WarnLevel {
 		return
 	}
 	warnLogger.Println(arg...)
@@ -70,7 +70,7 @@ func Warn(arg ...interface{}) {
 var errorLogger = log.New(os.Stderr, "[error]", log.Lshortfile|log.LstdFlags)
 
 func Error(arg ...interface{}) {
-	if DefaultLevel < ErrorLevel {
+	if DefaultLevel > ErrorLevel {
 		return
 	}
 	errorLogger.Println(arg...)
